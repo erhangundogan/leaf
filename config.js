@@ -1,15 +1,27 @@
 var config = {};
 
-config.mongodb = {};
+config.db = {};
 config.web = {};
-config.application = {};
+config.app = {};
 
-config.mongodb.uri = 'http://localhost/mwitter';
-config.mongodb.collection = 'mwitter';
+config.db.connection = 'mongodb://localhost/buildingManager';
+config.db.options = {
+  host: "localhost",
+  port: 27017,
+  dbName: "mwitter",
+  collection: "sessions",
+  serverOptions: { auto_reconnect: true, native_parser:true },
+  dbOptions: {}
+};
 
-config.web.port = 3000;
-config.web.secret = 'catch me if you can...';
+config.web = {
+  port: 3000,
+  sessionDuration: new Date(Date.now() + 3600000),
+  secret:'catch me if you can...'
+};
 
-config.application.idLength = 14;
+config.app = {
+  idLength: 14
+};
 
 module.exports = config;

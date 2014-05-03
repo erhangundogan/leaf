@@ -21,9 +21,9 @@ bower install
 node app.js
 ```
 
-Browse http://localhost:3000 and enjoy :)
+Browse [http://localhost:3000](http://localhost:3000) and enjoy :)
 
-### Steps to reproduce
+### Steps to reproduce projects startup
 * Download and install [Node.js](http://nodejs.org/download/)
 * Download and install [Git](http://git-scm.com/downloads)
 * Create Github repository mwitter
@@ -36,17 +36,17 @@ cd mwitter
 npm install -d -g express
 express -s -t jade
 
-// edit package.json
+// __edit package.json__
 npm install -d
 
-// create and edit .bowerrc and bower.json
+// __create and edit .bowerrc and bower.json__
 bower install
 
 git add .
 git commit -m 'first'
 git push origin master
 
-// go ahead and code ...
+// go ahead and code with your favourite ide ...
 ```
 
 
@@ -54,8 +54,9 @@ git push origin master
 
 **Erhan Gundogan**
 
-+ http://twitter.com/erhangundogan
-+ http://github.com/erhangundogan
+* http://github.com/erhangundogan
+* http://tr.linkedin.com/in/erhangundogan
+* http://twitter.com/erhangundogan
 
 
 License
