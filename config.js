@@ -4,7 +4,7 @@ config.db = {};
 config.web = {};
 config.app = {};
 
-config.db.connection = 'mongodb://localhost/buildingManager';
+config.db.connection = 'mongodb://localhost/mwitter';
 config.db.options = {
   host: "localhost",
   port: 27017,

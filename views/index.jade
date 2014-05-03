@@ -1,2 +1,10 @@
-h1= title
-p Welcome to #{title}
+extends layout
+
+block breadcrumb
+  ol.breadcrumb
+    li.active mwitter home
+
+block content
+  .row(style="margin-top:1em")
+    .col-md-12
+      h1 Home

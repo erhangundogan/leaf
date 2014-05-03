@@ -1,8 +1,8 @@
 
-/*
- * GET home page.
- */
-
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+  res.render('index');
+};
+
+exports.user = function() {
+  res.render('user');
 };
