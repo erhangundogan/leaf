@@ -1,0 +1,8 @@
+{
+  "name": "mwitter",
+  "version": "0.0.1",
+  "main": "public/style/main.css",
+  "dependencies": {
+    "bootstrap": "*"
+  }
+}
