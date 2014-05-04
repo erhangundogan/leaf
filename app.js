@@ -7,6 +7,7 @@ var express            = require('express'),
     http               = require('http'),
     routes             = require('./routes'),
     config             = require('./config'),
+    helper             = require('./helper'),
     app                = express(),
     server             = module.exports = http.createServer(app),
     passport           = require("./passports").Passport,
@@ -49,16 +50,11 @@ app.configure(function(){
   app.use(function(req, res, next) {
     res.locals.user = req.user;
     res.locals.session = req.session;
+    res.locals.messages = helper.messages(req, res);
     next();
   });
 
   app.use(app.router);
-  app.use(function(req, res, next) {
-    res.status(404).render('error/404', {
-      url: req.originalUrl,
-      error: dictionary["pageNotFound"]
-    });
-  });
 });
 
 app.configure('development', function(){
@@ -70,9 +66,17 @@ app.configure('production', function(){
 });
 
 // Routes
+app.get('/', routes.recent);
+app.get ("/login", routes.hasLoggedIn, routes.login);
+app.post("/login", routes.hasLoggedIn, routes.postLogin);
+app.get ("/signup", routes.hasLoggedIn, routes.signup);
+app.post("/signup", routes.hasLoggedIn, routes.postSignup);
+app.get ("/logout", routes.logout);
+app.get('/message', routes.requiresLogin, routes.message);
+app.post('/message', routes.requiresLogin, routes.postMessage);
+app.get('/recent', routes.recent);
+app.get('/:id', routes.getUser);
 
-app.get('/', routes.index);
-app.get('/:user', routes.user);
 
 server.listen(config.web.port, function() {
   console.log("Express server listening on port %d in %s mode", config.web.port, app.settings.env);

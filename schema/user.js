@@ -8,16 +8,18 @@ var mongoose = require('mongoose'),
  * User Schema
  */
 var UserSchema = exports.UserSchema = new schema({
-  name: {type:String, index:true},
-  email: {type:String, index:true},
+  name: { type:String },
+  fullName: { type:String, index:true },
+  email: { type:String, index:true },
   provider: String,
   hashed_password: String,
   salt: String,
-  active: {type:Boolean, default:false},
-  role: [String],
-  createDate: {type:Date, "default":Date.now}
+  active: { type:Boolean, default:true },
+  createDate: { type:Date, "default":Date.now },
+  info: String,
+  city: String,
+  country: String
 });
-
 
 UserSchema.virtual('password').set(function (password) {
   this._password = password;
@@ -28,28 +30,9 @@ UserSchema.virtual('password').set(function (password) {
   return this._password;
 });
 
-UserSchema.statics.isAdmin = function(user, callback) {
-  this.findOne()
-      .where("email", user.email)
-      .where("active", true)
-      .exec(function(err, account) {
-        if (err) {
-          console.log("[ERROR] isAdmin, %s", err);
-          callback(err);
-        } else {
-          if (account && account._doc && account._doc.role) {
-            var hasAdminRole = !!(account._doc.role.indexOf("admin") >= 0);
-            callback(null, hasAdminRole);
-          } else {
-            callback();
-          }
-        }
-      });
-};
-
 UserSchema.statics.createUser = function(user, callback) {
   user.provider = "local";
-  user.role = ["member"];
+  user.fullName = encodeURIComponent(user.name.replace(' ', ''));
   this.create(user, callback);
 };
 

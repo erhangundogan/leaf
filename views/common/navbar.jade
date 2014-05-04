@@ -3,10 +3,7 @@
     .navbar-header
       button.navbar-toggle(type="button", data-toggle="collapse", data-target="#site-navbar-collapse")
         span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/')=title
+      a.navbar-brand(href='/') mwitter
     #site-navbar-collapse.navbar-collapse.collapse
 
       ul.nav.navbar-nav.navbar-right
@@ -17,15 +14,24 @@
               b.caret
             ul.dropdown-menu
               li
-                a(href="/user")
-                  i.icon-user.mr05 User Settings
+                - var userPath = '/' + user.fullName;
+                a(href=userPath)
+                  i.fa.fa-user.mr05
+                  span My Messages
+              li
+                a(href='/message')
+                  i.fa.fa-pencil.mr05
+                  span New Message
               li
                 a(href='/logout')
-                  i.icon-signout.mr05 Log out
+                  i.fa.fa-sign-out.mr05
+                  span Log out
         - else
           li
             a(href='/signup')
-              i.iconf-pencil.mr05 Signup
+              i.fa.fa-pencil.mr05
+              span Signup
           li
             a(href='/login')
-              i.icon-signin.mr05 Log in
+              i.fa.fa-sign-in.mr05
+              span Log in

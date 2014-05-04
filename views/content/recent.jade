@@ -1,0 +1,15 @@
+extends ../layout
+
+block head
+  title Welcome to mwitter
+
+block breadcrumb
+  ol.breadcrumb
+    li.active Recent Messages
+
+block content
+  .row.mt10
+    .col-md-12
+      h1(style='margin-top:0') Recent Messages
+
+  include messages

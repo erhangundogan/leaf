@@ -1,21 +1,49 @@
 doctype html(lang="tr")
 head
   block head
-    title Main
-    include meta
+    include common/meta
 
-    //Bootstrap
-    link(type="text/css", href="/public/components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
-    link(type="text/css", href="/public/style/main.css", rel="stylesheet")
+  block style
+    include common/style
 
   block script
-    //if ltIE 9
-    script(src="//html5shiv.googlecode.com/svn/trunk/html5.js")
-    script(src="/public/components/jquery/dist/jquery.min.js")
-    script(src="/public/components/bootstrap/dist/js/bootstrap.min.js")
+    include common/script
+    script.
+      $(function() {
+        $('.mwit-message').each(function() {
+          var message = $(this).text();
+          var newMessage = message.replace('\r\n', ' ').replace('\t', ' ').replace('\n', ' ');
 
-body(data-spy="scroll", data-target=".bs-docs-sidebar", data-twttr-rendered="true")
-  include navbar
+          var links = newMessage.match(/(\s+)((https?|ftp)\:\/\/[a-z0-9-.]*\.[a-z]{2,4}\/?\S+)/g);
+          if (links && links.length > 1) {
+            for (var i in links) {
+              links[i] = links[i].replace(' ', '');
+              var urlLink = ' <a target="_blank" href="' + links[i] + '">' + links[i] + '</a>';
+              newMessage = newMessage.replace(' ' + links[i], urlLink);
+            };
+          } else if (links && links.length == 1) {
+            var urlLink = ' <a target="_blank" href="' + links[0] + '">' + links[0] + '</a>';
+            newMessage = newMessage.replace(' ' + links[0], urlLink);
+          }
+
+          var hashtags = newMessage.match(/(?!\s+)(#\S+)/g);
+          if (hashtags && hashtags.length > 1) {
+            for (var i in hashtags) {
+              var hashtagLink = '<a href="/' + hashtags[i] + '">' + hashtags[i] + '</a>';
+              newMessage = newMessage.replace(hashtags[i], hashtagLink);
+            }
+          } else if (hashtags && hashtags.length == 1) {
+            var hashtagLink = '<a href="/' + hashtags[0] + '">' + hashtags[0] + '</a>';
+            newMessage = newMessage.replace(hashtags[0], hashtagLink);
+          }
+
+          $(this).html(newMessage);
+        })
+      });
+
+
+body
+  include common/navbar
 
   .container
     .row
@@ -23,7 +51,7 @@ body(data-spy="scroll", data-target=".bs-docs-sidebar", data-twttr-rendered="tru
         div(style="position:relative")
           .message-container
             .message-content
-              //!=messages()
+              !=messages()
         block breadcrumb
 
     block content

@@ -2,7 +2,7 @@
 
 ### Yess, yet another twitter clone
 
-* Pure javascript client featuring popular Bootstrap, Underscore Templates and HTML5 enhancements.
+* Pure javascript client featuring popular Bootstrap and HTML5 enhancements.
 * Fastest web server Node.js and rock solid, popular Express web framework.
 * NoSQL star MongoDB and Mongoose ORM Library on the scene.
 

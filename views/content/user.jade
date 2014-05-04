@@ -1,0 +1,16 @@
+extends ../layout
+
+block head
+  title=selectedUser ? selectedUser.name : ''
+
+block breadcrumb
+  ol.breadcrumb
+    - if (selectedUser)
+      li=selectedUser.name
+    li.active Messages
+
+block content
+  - if (selectedUser)
+    include bio
+    br
+    include messages

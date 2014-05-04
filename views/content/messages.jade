@@ -1,0 +1,18 @@
+- if (userMessages && userMessages.length > 0)
+  .row
+    .col-md-12.mwit-list
+
+      each userMessage, messageIndex in userMessages
+        .row.mwit-item
+          .col-md-1
+            .user-sm-image-container
+              img.user-sm-image(src='/public/images/blank_face.jpeg')
+          .col-md-11.mwit-container
+            .row
+              .col-md-12
+                .mwit-message=userMessage.text
+                .mwit-time=userMessage.createDate
+            .row
+              .col-md-12
+                - var locationData = user.city ? (user.country ? user.city + ', ' +user.country : user.city) : (user.country ? user.country : '');
+                .mwit-location=locationData
