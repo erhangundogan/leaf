@@ -2,10 +2,58 @@ var User = require('../schema/user').UserModel,
     UserMessage = require('../schema/userMessage').UserMessageModel,
     passport = require('../passports').Passport,
     path = require('path'),
-    fs = require('fs');
+    fs = require('fs'),
+    jade = require('jade');
 
 exports.index = function(req, res){
   res.render('content/recent');
+};
+
+exports.loadMessages = function(req, res) {
+  if (req.xhr && req.params && req.params.id && req.params.page) {
+    if (req.params.id == 'recent') {
+      UserMessage.getRecentMessages(req.params.page, null, function(err, result) {
+        if (err) {
+          res.send(500, { error: err });
+        } else {
+          jade.renderFile(path.join(__dirname, '..', 'views', 'content', 'messages.jade'),
+            { userMessages:result }, function(err, compiledResult) {
+            if (err) {
+              console.log(err);
+              res.send(500, { error: err });
+            } else {
+              res.header('content-type', 'text/html');
+              res.send(compiledResult, 200);
+            }
+          });
+        }
+      });
+    } else {
+      var fullName = encodeURIComponent(req.params.id);
+      User.findOne({ fullName:fullName }, function(err, selectedUser) {
+        if (err) {
+          res.send(500, { error: err });
+        } else if (selectedUser && selectedUser._doc) {
+          UserMessage.getRecentMessages(req.params.page, selectedUser.id, function(err, result) {
+            if (err) {
+              res.send(500, { error: err });
+            } else {
+              jade.renderFile(path.join(__dirname, '..', 'views', 'content', 'messages.jade'),
+                { userMessages:result }, function(err, compiledResult) {
+                if (err) {
+                  console.log(err);
+                  res.send(500, { error: err });
+                } else {
+                  res.header('content-type', 'text/html');
+                  res.send(compiledResult, 200);
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  }
 };
 
 exports.getUser = function(req, res, next) {
@@ -16,14 +64,27 @@ exports.getUser = function(req, res, next) {
         req.flash('danger', err);
         res.redirect('/');
       } else if (selectedUser && selectedUser._doc) {
-        res.render('content/user', { selectedUser:selectedUser._doc });
+
+        UserMessage.getRecentMessages(page, selectedUser.id, function(err, result) {
+          if (err) {
+            req.flash('danger', err);
+          } else {
+            res.render('content/user', { selectedUser:selectedUser._doc, userMessages:result });
+          }
+        });
+
       } else {
         req.flash('danger', escape(req.params.id) + ' not found');
         res.redirect('/');
       }
     });
   } else {
-    UserMessage.getRecentMessages(function(err, result) {
+    var page = 0;
+    if (req.params && req.params.page) {
+      page = req.params.page;
+    }
+
+    UserMessage.getRecentMessages(page, null, function(err, result) {
        if (err) {
          req.flash('danger', err);
        } else {

@@ -12,4 +12,15 @@ block content
     .col-md-12
       h1(style='margin-top:0') Recent Messages
 
-  include messages
+      .mwit-list
+
+        include messages
+
+        .load-more
+
+        .row.mtb10
+          .col-md-12
+            center
+              - var pageCount = (pageCount || 0) + 1;
+              - var recentPage = '/load/recent/' + pageCount;
+              a#load-more(href='#', data-load=recentPage) Load more

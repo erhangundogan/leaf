@@ -74,8 +74,9 @@ app.post("/signup", routes.hasLoggedIn, routes.postSignup);
 app.get ("/logout", routes.logout);
 app.get('/message', routes.requiresLogin, routes.message);
 app.post('/message', routes.requiresLogin, routes.postMessage);
-app.get('/recent', routes.recent);
-app.get('/:id', routes.getUser);
+app.get('/load/:id/:page', routes.loadMessages);
+app.get('/recent/:page?', routes.recent);
+app.get('/:id/:page?', routes.getUser);
 
 
 server.listen(config.web.port, function() {

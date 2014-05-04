@@ -1,6 +1,6 @@
 - if (userMessages && userMessages.length > 0)
   .row
-    .col-md-12.mwit-list
+    .col-md-12
 
       each userMessage, messageIndex in userMessages
         .row.mwit-item
@@ -11,8 +11,15 @@
             .row
               .col-md-12
                 .mwit-message=userMessage.text
-                .mwit-time=userMessage.createDate
+                .mwit-time(data-index=messageIndex)
+                  script.
+                    var newDate = new Date('!{userMessage.createDate}');
+                    $('.mwit-time[data-index="!{messageIndex}"]').append(moment(newDate).fromNow());
+
             .row
               .col-md-12
-                - var locationData = user.city ? (user.country ? user.city + ', ' +user.country : user.city) : (user.country ? user.country : '');
-                .mwit-location=locationData
+                - var locationData = [];
+                - if (userMessage.createdBy && userMessage.createdBy.city) locationData.push(userMessage.createdBy.city);
+                - if (userMessage.createdBy && userMessage.createdBy.country) locationData.push(userMessage.createdBy.country);
+
+                .mwit-location=locationData.join(', ')

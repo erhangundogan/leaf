@@ -30,9 +30,10 @@ a {
 .mr05 { margin-right: .5em }
 .mr02 { margin-right: .2em }
 .ml05 { margin-left: .5em }
-.mt05 { margint-top: .5em }
-.mt10 { margint-top: 1em }
-.mt20 { margint-top: 2em }
+.mt05 { margin-top: .5em }
+.mt10 { margin-top: 1em }
+.mt20 { margin-top: 2em }
+.mtb10 { margin-top: 1em; margin-bottom: 1em; }
 
 .navbar-static-top {
   margin-bottom: 19px;

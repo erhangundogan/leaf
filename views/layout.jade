@@ -14,16 +14,18 @@ head
           var message = $(this).text();
           var newMessage = message.replace('\r\n', ' ').replace('\t', ' ').replace('\n', ' ');
 
-          var links = newMessage.match(/(\s+)((https?|ftp)\:\/\/[a-z0-9-.]*\.[a-z]{2,4}\/?\S+)/g);
+          var links = newMessage.match(/((https?|ftp)\:\/\/[a-z0-9-.]*\.[a-z]{1,4}\/?\S+)/g);
           if (links && links.length > 1) {
             for (var i in links) {
               links[i] = links[i].replace(' ', '');
               var urlLink = ' <a target="_blank" href="' + links[i] + '">' + links[i] + '</a>';
-              newMessage = newMessage.replace(' ' + links[i], urlLink);
+              var existingLinkCheck = i > 0 ? ' ' : '';
+              newMessage = newMessage.replace(existingLinkCheck + links[i], urlLink);
             };
           } else if (links && links.length == 1) {
+            links[0] = links[0].replace(' ', '');
             var urlLink = ' <a target="_blank" href="' + links[0] + '">' + links[0] + '</a>';
-            newMessage = newMessage.replace(' ' + links[0], urlLink);
+            newMessage = newMessage.replace(links[0], urlLink);
           }
 
           var hashtags = newMessage.match(/(?!\s+)(#\S+)/g);
@@ -38,7 +40,22 @@ head
           }
 
           $(this).html(newMessage);
-        })
+        });
+
+        $('#load-more').click(function() {
+          var requestAddress = $(this).attr('data-load');
+          $.ajax({
+            url:requestAddress,
+            success: function(data, textStatus, jqXHR) {
+              if (textStatus == 'success' && data) {
+                $('.load-more').prepend($(data));
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.error(errorThrown)
+            }
+          });
+        });
       });
 
 

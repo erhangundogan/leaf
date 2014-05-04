@@ -33,15 +33,17 @@ UserMessageSchema.statics.getRecentMessages = function(page, user, callback) {
     this.find({ createdBy:user })
       .lean()
       .sort('-createDate')
-      .skip(page * 20)
-      .limit(20)
+      .skip(page * 10)
+      .limit(10)
+      .populate('createdBy')
       .exec(callback);
   } else {
     this.find()
       .lean()
       .sort('-createDate')
-      .skip(page * 20)
-      .limit(20)
+      .skip(page * 10)
+      .limit(10)
+      .populate('createdBy')
       .exec(callback);
   }
 
