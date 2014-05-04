@@ -4,9 +4,9 @@ config.db = {};
 config.web = {};
 config.app = {};
 
-config.db.connection = 'mongodb://localhost/mwitter';
+config.db.connection = 'mongodb://192.168.122.10/mwitter';
 config.db.options = {
-  host: "localhost",
+  host: "192.168.122.10",
   port: 27017,
   dbName: "mwitter",
   collection: "sessions",
@@ -15,9 +15,9 @@ config.db.options = {
 };
 
 config.web = {
-  port: 3000,
+  port: 8002,
   sessionDuration: new Date(Date.now() + 3600000),
-  secret:'catch me if you can...'
+  secret:'catch me if you can... ye ye ye...'
 };
 
 config.app = {

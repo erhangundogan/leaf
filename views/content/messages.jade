@@ -6,7 +6,9 @@
         .row.mwit-item
           .col-md-1
             .user-sm-image-container
-              img.user-sm-image(src='/public/images/blank_face.jpeg')
+              - var userLink = '/' + userMessage.createdBy.fullName;
+              a(href=userLink)
+                img.user-sm-image(src='/public/images/blank_face.jpeg', title=userMessage.createdBy.name, border=0)
           .col-md-11.mwit-container
             .row
               .col-md-12
