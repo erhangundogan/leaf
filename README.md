@@ -39,10 +39,10 @@ cd mwitter
 npm install -d -g express
 express -s -t jade
 
-// __edit package.json__
+//edit package.json and add libraries
 npm install -d
 
-// __create and edit .bowerrc and bower.json__
+// create and edit .bowerrc and bower.json. add libraries
 bower install
 
 git add .
