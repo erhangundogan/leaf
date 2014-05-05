@@ -23,6 +23,9 @@ node app.js
 
 Browse [http://localhost:3000](http://localhost:3000) and enjoy :)
 
+### Bugs
+* There is a login problem with node.js 0.8.21 version, it affects mwitter.gelistirme.org
+
 ### Steps to reproduce projects startup
 * Download and install [Node.js](http://nodejs.org/download/)
 * Download and install [Git](http://git-scm.com/downloads)
