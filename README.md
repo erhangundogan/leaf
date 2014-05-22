@@ -2,7 +2,7 @@
 
 ### Yess, yet another twitter clone
 
-* Pure javascript client featuring popular Bootstrap and HTML5 enhancements.
+* Client featuring popular Bootstrap and HTML5 enhancements.
 * Fastest web server Node.js and rock solid, popular Express web framework.
 * NoSQL star MongoDB and Mongoose ORM Library on the scene.
 
@@ -23,7 +23,10 @@ node app.js
 
 Browse [http://localhost:3000](http://localhost:3000) and enjoy :)
 
-### Steps to reproduce projects startup
+### Bugs
+* There is a login problem with node.js 0.8.21 version, it affects mwitter.gelistirme.org
+
+### Steps to reproduce project
 * Download and install [Node.js](http://nodejs.org/download/)
 * Download and install [Git](http://git-scm.com/downloads)
 * Create Github repository mwitter
@@ -36,10 +39,10 @@ cd mwitter
 npm install -d -g express
 express -s -t jade
 
-// __edit package.json__
+//edit package.json and add libraries
 npm install -d
 
-// __create and edit .bowerrc and bower.json__
+// create and edit .bowerrc and bower.json. add libraries
 bower install
 
 git add .
