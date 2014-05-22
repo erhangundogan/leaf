@@ -133,19 +133,21 @@ exports.recent = function(req, res) {
   });
 };
 
-exports.getHashtagMessages = function(req, res, next) {
-  if (req.params && req.params.hashtag && req.params.hashtag[0] === '#') {
-    //var hashtag = '#' + req.params.hashtag.substr(1);
+exports.getHashtagMessages = function(req, res) {
+  if (req.params && req.params.hashtag) {
+    var hashtag = '#' + req.params.hashtag;
     UserMessage.getHashtagMessage(hashtag, function(err, result) {
        if (err) {
          req.flash('danger', err);
+         res.render('back');
        } else {
          console.log(result.length);
          res.render('content/recent', { userMessages:result });
        }
     });
   } else {
-    next();
+    req.flash('danger', 'Hashtag error!');
+    res.render('back');
   }
 };
 

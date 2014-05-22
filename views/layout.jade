@@ -31,11 +31,13 @@ head
           var hashtags = newMessage.match(/(?!\s+)(#\S+)/g);
           if (hashtags && hashtags.length > 1) {
             for (var i in hashtags) {
-              var hashtagLink = '<a href="/' + hashtags[i] + '">' + hashtags[i] + '</a>';
+              var hashtag = hashtags[i].substr(1);
+              var hashtagLink = '<a href="/hashtag/' + hashtag + '">' + hashtags[i] + '</a>';
               newMessage = newMessage.replace(hashtags[i], hashtagLink);
             }
           } else if (hashtags && hashtags.length == 1) {
-            var hashtagLink = '<a href="/' + hashtags[0] + '">' + hashtags[0] + '</a>';
+            var hashtag = hashtags[0].substr(1);
+            var hashtagLink = '<a href="/hashtag/' + hashtag + '">' + hashtags[0] + '</a>';
             newMessage = newMessage.replace(hashtags[0], hashtagLink);
           }
 

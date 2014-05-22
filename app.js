@@ -76,8 +76,7 @@ app.get('/message', routes.requiresLogin, routes.message);
 app.post('/message', routes.requiresLogin, routes.postMessage);
 app.get('/load/:id/:page', routes.loadMessages);
 app.get('/recent/:page?', routes.recent);
-app.get(/#\w+/, routes.getHashtagMessages);
-//app.get('/:hashtag', routes.getHashtagMessages);
+app.get('/hashtag/:hashtag', routes.getHashtagMessages);
 app.get('/:id/:page?', routes.getUser);
 
 
