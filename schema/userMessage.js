@@ -20,6 +20,10 @@ UserMessageSchema.statics.createMessage = function(message, callback) {
   this.create(message, callback);
 };
 
+UserMessageSchema.statics.getHashtagMessage = function(hashtag, callback) {
+  this.find({ hashtags:hashtag }, callback);
+};
+
 UserMessageSchema.statics.getRecentMessages = function(page, user, callback) {
 
   if (typeof(page) == 'function') {
