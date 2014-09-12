@@ -22,8 +22,7 @@ var express            = require('express'),
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.logger({ format: "\x1b[0;37m[:date] \x1b[0;32m:remote-addr \x1b[0;33m:method " +
-    "\x1b[0;30m:status \x1b[0;35m:response-time ms \x1b[0;36m:referrer \x1b[0;37m:url " }));
+  app.use(express.logger());
   app.use(express.bodyParser({ uploadDir:"/tmp" }));
   app.use(express.methodOverride());
   app.use(cookieParser);

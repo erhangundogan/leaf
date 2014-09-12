@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
+    debugger;
   $routeProvider.when('/view1', {templateUrl: 'templates/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
