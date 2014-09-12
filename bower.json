@@ -1,10 +1,15 @@
 {
-  "name": "mwitter",
+  "name": "leaf",
+  "description": "geekli.st global hackathon project api",
   "version": "0.0.1",
-  "main": "public/style/main.css",
-  "dependencies": {
-    "bootstrap": "*",
-    "fontawesome": "*",
-    "moment": "*"
+  "devDependencies": {
+    "angular": "*",
+    "angular-route": "*",
+    "angular-mocks": "*",
+    "jquery": "*",
+    "html5-boilerplate": "*",
+    "es5-shim": "*",
+    "flexboxgrid": "*",
+    "fontawesome": "*"
   }
 }

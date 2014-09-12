@@ -1,13 +1,13 @@
 {
-    "name": "mwitter",
+    "name": "leaf",
     "version": "0.0.1",
     "private": true,
-    "description": "sql2mongodb (aka Priceless), MS SQL Server to MongoDB Export Tool",
-    "keywords": ["sql", "mssql", "export", "import", "mongo", "mongodb"],
-    "author": "Erhan Gundogan <erhan@trposta.net>",
+    "description": "geekli.st global hackathon project api",
+    "keywords": ["geeklist", "hack4good", "hackaton", "leaf"],
+    "author": "Erhan Gundogan <erhan.gundogan@gmail.com>",
     "repository": {
       "type": "git",
-      "url": "https://github.com/erhangundogan/sql2mongodb"
+      "url": "https://github.com/erhangundogan/leaf"
     },
     "dependencies": {
       "express": "3.5.2",
@@ -16,6 +16,26 @@
       "passport": "*",
       "passport-local": "*",
       "connect-mongo": "*",
-      "connect-flash": "*"
+      "mocha": "*",
+      "chai": "*",
+      "chai-jquery": "*",
+      "grunt": "*",
+      "grunt-bower-concat": "*",
+      "grunt-contrib-clean": "*",
+      "grunt-contrib-concat": "*",
+      "grunt-contrib-copy": "*",
+      "grunt-contrib-cssmin": "*",
+      "grunt-contrib-jshint": "*",
+      "grunt-contrib-uglify": "*",
+      "grunt-contrib-watch": "*",
+      "grunt-processhtml": "*",
+      "grunt-init": "*",
+      "istanbul": "*",
+      "karma": "*",
+      "karma-chrome-launcher": "*",
+      "karma-coverage": "*",
+      "karma-jquery-chai": "*",
+      "karma-mocha": "*",
+      "karma-ng-html2js-preprocessor": "*"
   }
 }

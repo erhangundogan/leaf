@@ -52,5 +52,5 @@ passport.use(new LocalStrategy(
   }
 ));
 
-exports.Passport          = passport;
-exports.LocalStrategy     = LocalStrategy;
+exports.Passport      = passport;
+exports.LocalStrategy = LocalStrategy;

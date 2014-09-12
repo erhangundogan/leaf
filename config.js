@@ -4,11 +4,11 @@ config.db = {};
 config.web = {};
 config.app = {};
 
-config.db.connection = 'mongodb://localhost/mwitter';
+config.db.connection = 'mongodb://localhost/leaf';
 config.db.options = {
   host: "localhost",
   port: 27017,
-  dbName: "mwitter",
+  dbName: "leaf",
   collection: "sessions",
   serverOptions: { auto_reconnect: true, native_parser:true },
   dbOptions: {}
@@ -17,7 +17,7 @@ config.db.options = {
 config.web = {
   port: 3000,
   sessionDuration: new Date(Date.now() + 3600000),
-  secret:'catch me if you can...'
+  secret: 'leaf rocks'
 };
 
 config.app = {
