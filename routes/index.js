@@ -3,6 +3,8 @@
  */
 
 var product = require('../schema/production').ProductionModel;
+var consume = require('../schema/consumption').ConsumptionModel;
+var helper = require('../helper');
 
 exports.home = function(req, res) {
   res.sendfile('./public/index.html');
