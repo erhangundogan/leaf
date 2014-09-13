@@ -8,12 +8,26 @@ var mongoose = require('mongoose'),
 var ProductSchema = exports.ProductSchema = new schema({
   name: { type:String },
   brand: { type:String },
-  soldAt: { longitude:Number, latitude:Number },
-  producedCity: { type:String },
-  producedCountry: { type:String },
+  image: { type:String },
+  barcode: { type:String },
+  impact: Number,
+  consumed: {
+    longitude:Number,
+    latitude:Number,
+    country:String,
+    city:String,
+    district:String
+  },
+  produced: {
+    longitude:Number,
+    latitude:Number,
+    country:String,
+    city:String,
+    district:String
+  },
   active: { type:Boolean, default:true },
-  createDate: { type:Date, "default":Date.now },
-  createdBy: { type:ObjectId, index:true, ref:'user' }
+  recordDate: { type:Date, "default":Date.now },
+  recordedBy: { type:ObjectId, index:true, ref:'user' }
 });
 
 var ProductModel = exports.ProductModel = connection.model('product', ProductSchema);
