@@ -4,7 +4,6 @@
 
 var product = require('../schema/production').ProductionModel,
     consumption = require('../schema/consumption').ConsumptionModel,
-    async = require('async'),
     helper = require('../helper');
 
 exports.home = function(req, res) {
