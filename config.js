@@ -7,7 +7,7 @@ module.exports = {
     cookieSecret: 'leafteam rocks!'
   },
   web: {
-    port: 3000,
+    port: 8005,
     sessionDuration: new Date(Date.now() + 3600000),
     secret: 'leaf rocks'
   }

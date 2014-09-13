@@ -4,10 +4,12 @@ product schema
 
     name: { type:String },
     brand: { type:String },
-    type: { type:String, default:'water' },
+    company: { type:String },
     image: { type:String },
     barcode: { type:String },
     impact: Number,
+    description: { type:String },
+    tags: [String],    
     consumed: {
       longitude:Number,
       latitude:Number,
@@ -28,12 +30,15 @@ product schema
 
 product sample
 
-    name: 'Bottle 0.5lt',
+    name: 'Bottle 0.5lt',    
     brand: 'Erikli',
+    company: 'Erikli',
     type: 'water',
     image: 'http://www.kiyasmatik.com/assets/i/p/big/5419.jpg',
     barcode: '123',
     impact: 0.3,
+    description: 'half liter bottle',
+    tags: ['plastic', 'recyclable'],
     consumed: {
       longitude: 41.02612,
       latitude: 28.98155,
@@ -50,4 +55,4 @@ product sample
     },
     active: true,
     recordDate: '2014-09-27T11:13:25.819Z',
-    recordedBy: ObjectId('u2HjSnQpD-M-uEoJzo1XO-QQqqOkQDUr')
+    recordedBy: ObjectId('53ad390b8873e58a46c5e06b')

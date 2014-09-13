@@ -18,7 +18,7 @@ var express           = require('express'),
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-app.set('port', process.env.PORT || 3000);
+app.set('port', settings.web.port);
 app.set('views', path.join(__dirname, 'public/templates'));
 app.set('view engine', 'jade');
 
@@ -39,7 +39,7 @@ app.get('/product', routes.product.get);
 app.use('*', routes.home);
 
 var server = app.listen(app.get('port'), function() {
-  console.log('leaf api server listening on port ', server.address().port);
+  console.log('leaf api server listening on port', server.address().port);
 });
 
 module.exports = app;

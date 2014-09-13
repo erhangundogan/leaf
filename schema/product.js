@@ -9,9 +9,12 @@ var mongoose = require('mongoose'),
 var ProductSchema = exports.ProductSchema = new schema({
   name: { type:String },
   brand: { type:String },
+  company: { type:String },
   image: { type:String },
   barcode: { type:String },
   impact: Number,
+  description: { type:String },
+  tags: [String],
   consumed: {
     longitude:Number,
     latitude:Number,
