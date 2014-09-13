@@ -3,7 +3,8 @@ module.exports = {
     name: 'leaf'
   },
   db: {
-    connection: 'mongodb://192.168.122.10/leaf',
+    //connection: 'mongodb://192.168.122.10/leaf',
+    connection: 'mongodb://localhost/leaf',
     cookieSecret: 'leafteam rocks!'
   },
   web: {

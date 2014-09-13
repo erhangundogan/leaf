@@ -35,8 +35,12 @@ app.use(session({
   })
 }));
 
-app.get('/api/product', routes.product.get);
-app.use('*', routes.home);
+app.get  ('/api/product/:code', routes.product.getByCode);
+app.get  ('/api/product', routes.product.getOneByFilter);
+app.get  ('/api/products', routes.product.getManyByFilter);
+app.post ('/api/product', routes.product.save);
+app.post ('/api/consume', routes.consume.save);
+app.use  ('*', routes.home);
 
 var server = app.listen(app.get('port'), function() {
   console.log('leaf api server listening on port', server.address().port);

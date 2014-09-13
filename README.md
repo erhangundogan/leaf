@@ -6,9 +6,10 @@ Provides web server and api for the web and mobile leaf application.
 
 ## API
 
-### Get Product
+Get Product
+-----------
 
-You may use any [product](schema/) property for data query as below.
+You may use any [product](schema/) property for data query as below. It will return one product if the criterias matched.
 
 Request:
 
@@ -17,13 +18,50 @@ Request:
 Response:
 
     // found
-    { data: … }
+    { 
+      data: { 
+        name: …,
+        brand: …,
+        …
+      }
+    }
     
     // not found
     { data: null }
     
     // error state
-    { error: … }    
+    { error: … } 
+    
+Get Products
+------------
+
+You may use any [product](schema/) property for data query as below. It will return product list if the criterias matched.
+
+Request:
+
+    http://leaf.gelistirme.org/api/products?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
+    
+Response:
+
+    // found
+    { 
+      data: [{ 
+        name: …,
+        brand: …,
+        …
+      }, { 
+        name: …,
+        brand: …,
+        …
+      }],
+      count: … 
+    }
+    
+    // not found
+    { data: null }
+    
+    // error state
+    { error: … }   
 
 
 ### Authors
