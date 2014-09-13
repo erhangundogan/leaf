@@ -1,7 +1,30 @@
-# leaf api
-Provides clean and sleek api for the web and mobile leaf application.
+# leaf server
 
 #### Hack4good 0.6 Istanbul, hack against catastrophic climate change
+
+Provides web server and api for the web and mobile leaf application.
+
+## API
+
+### Get Product
+
+You may use any [product](schema/) property for data query as below.
+
+Request:
+
+    http://leafteam.github.io/api/product?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
+    
+Response:
+
+    // found
+    { data: … }
+    
+    // not found
+    { data: null }
+    
+    // error state
+    { error: … }    
+
 
 ### Authors
 

@@ -3,15 +3,8 @@ module.exports = {
     name: 'leaf'
   },
   db: {
-    connection: 'mongodb://localhost/leaf',
-    session: {
-      host: "localhost",
-      port: 27017,
-      dbName: "leaf",
-      collection: "sessions",
-      serverOptions: { auto_reconnect: true, native_parser:true },
-      dbOptions: {}
-    }
+    connection: 'mongodb://guest:iamguestok@ds063889.mongolab.com:63889/leaf',
+    cookieSecret: 'leafteam rocks!'
   },
   web: {
     port: 3000,

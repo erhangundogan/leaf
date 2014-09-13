@@ -1,7 +1,7 @@
 {
   "name": "leaf",
-  "description": "geekli.st global hackathon project api",
-  "version": "0.0.1",
+  "description": "Hack4Good Istanbul Leaf Team",
+  "version": "0.0.2",
   "devDependencies": {
     "angular": "*",
     "angular-bootstrap":"*",

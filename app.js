@@ -9,14 +9,11 @@ var express           = require('express'),
     logger            = require('morgan'),
     cookieParser      = require('cookie-parser'),
     bodyParser        = require('body-parser'),
+    session           = require('express-session'),
+    MongoStore        = require('connect-mongo')(session),
     routes            = require('./routes'),
     settings          = require('./config'),
     passports         = require('./auth'),
-
-    dbConfig          = settings.db.session,
-    MongoDb           = require("mongoose/node_modules/mongodb"),
-    MongoDbServer     = new MongoDb.Server(dbConfig.host, dbConfig.port, dbConfig.serverOptions),
-    MongoDbConnection = new MongoDb.Db(dbConfig.dbName, MongoDbServer, dbConfig.dbOptions);
     app               = express();
 
 // uncomment after placing your favicon in /public
@@ -29,42 +26,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.cookieParser());
-app.use(express.session({secret: 'leaf rocks'}));
+app.use(session({
+  secret: settings.db.cookieSecret,
+  store: new MongoStore({
+    auto_reconnect: true,
+    url : settings.db.connection + '/sessions'
+  })
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/product', routes.product.get);
 app.use('*', routes.home);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
 
 var server = app.listen(app.get('port'), function() {
   console.log('leaf api server listening on port ', server.address().port);

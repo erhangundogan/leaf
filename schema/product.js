@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'),
-  connection = require('./user'),
-  schema = mongoose.Schema;
+    connection = require('./user').connection,
+    schema = mongoose.Schema,
+    ObjectId = schema.ObjectId;
 
 /**
  * Product Schema
@@ -30,4 +31,4 @@ var ProductSchema = exports.ProductSchema = new schema({
   recordedBy: { type:ObjectId, index:true, ref:'user' }
 });
 
-var ProductModel = exports.ProductModel = connection.model('product', ProductSchema);
+exports.ProductModel = connection.model('product', ProductSchema);
