@@ -1,7 +1,7 @@
 # leaf api
-Provides cleand and sleek api for the web and mobile leaf application.
+Provides clean and sleek api for the web and mobile leaf application.
 
-### Hack4good 0.6 Istanbul, hack against catastrophic climate change
+#### Hack4good 0.6 Istanbul, hack against catastrophic climate change
 
 ### Authors
 
