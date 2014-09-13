@@ -10,8 +10,16 @@ html, body, body > div{
 .landing-container{
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
+.landing-container .row:not(:first-child) {
+  padding-top: 70px;
+}
+
+.landing-container .nav li a, .landing-container .nav-justified li a{
+  text-align: left;
+}
 /*Search Page
 */
 
@@ -34,36 +42,7 @@ html, body, body > div{
 .full-height{
   height: 100%;
 }
-.flex-center{
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.flex-item{
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-.flex-vertical-space-between{
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.header-img-container{
-  height: 100%;
-  width: 100px;
+.img-responsive{
+  max-height: 100%;
 }
