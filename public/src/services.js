@@ -17,10 +17,8 @@ angular.module('leaf.services', []).
       getAll: function(){
         return $http.get(root + '/product');
       },
-      getByName: function(name){
-        return $http.post(root + '/product', JSON.stringify({
-          name: name
-        }));
+      getAllByName: function(name){
+        return $http.post(root + '/products?name=' + name);
       }
     }
   }]);

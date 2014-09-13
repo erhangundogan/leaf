@@ -20,6 +20,17 @@ html, body, body > div{
   overflow-y: auto;
 }
 
+/*Login Page
+*/
+
+.login-container .row:nth-child(2){
+  height: 300px;
+}
+
+.login-container .row:nth-child(2) form{
+  padding-top: 30px;
+}
+
 .full-height{
   height: 100%;
 }
@@ -48,6 +59,11 @@ html, body, body > div{
   display: -webkit-flex;
   flex-direction: column;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-img-container{
+  height: 100%;
+  width: 100px;
 }
