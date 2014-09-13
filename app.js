@@ -42,11 +42,20 @@ app.use(function(req, res, next) {
   next();
 });
 
+// log
 app.use(logger('dev'));
+
+// body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse cookies
 app.use(cookieParser());
+
+// set static directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// mongodb session storage
 app.use(session({
   secret: settings.db.cookieSecret,
   store: new MongoStore({
@@ -55,12 +64,13 @@ app.use(session({
   })
 }));
 
+// routes begin here
 app.get  ('/api/product/:code', routes.product.getByCode);
 app.get  ('/api/product', routes.product.getOneByFilter);
 app.get  ('/api/products', routes.product.getManyByFilter);
 app.post ('/api/product', routes.product.save);
-app.post ('/api/consume', routes.consume.save);
 app.use  ('*', routes.home);
+// routes end here
 
 var server = app.listen(app.get('port'), function() {
   console.log('leaf api server listening on port', server.address().port);

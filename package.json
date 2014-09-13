@@ -1,9 +1,9 @@
 {
     "name": "leaf",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "private": true,
     "description": "geekli.st global hackathon project api",
-    "keywords": ["geeklist", "hack4good", "hackaton", "leaf"],
+    "keywords": ["geeklist", "hack4good", "hackathon", "leaf", "leafteam"],
     "author": "Hack4Good Istanbul Leaf Team",
     "repository": {
       "type": "git",
@@ -32,7 +32,6 @@
       "grunt-contrib-cssmin": "*",
       "grunt-contrib-jshint": "*",
       "grunt-contrib-uglify": "*",
-      "grunt-contrib-watch": "*",
       "grunt-processhtml": "*",
       "grunt-init": "*",
       "istanbul": "*",
