@@ -10,7 +10,7 @@ var express           = require('express'),
     cookieParser      = require('cookie-parser'),
     bodyParser        = require('body-parser'),
     routes            = require("./routes"),
-    settings          = require("./settings"),
+    settings          = require("./config"),
     dbConfig          = settings.db.session,
     MongoDb           = require("mongoose/node_modules/mongodb"),
     MongoDbServer     = new MongoDb.Server(dbConfig.host, dbConfig.port, dbConfig.serverOptions),
@@ -27,7 +27,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.cookieParser());
-app.use(express.session({secret: 'white_rabbit'}));
+app.use(express.session({secret: 'leaf rocks'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('*', routes.home);
@@ -64,7 +64,7 @@ app.use(function(err, req, res, next) {
 });
 
 var server = app.listen(app.get('port'), function() {
-  console.log('Gear application listening on port ', server.address().port);
+  console.log('leaf api server listening on port ', server.address().port);
 });
 
 module.exports = app;
