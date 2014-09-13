@@ -10,16 +10,31 @@ angular.module('leaf.controllers', ['ngRoute'])
       $location.path('search/product/' + name);
     }
   }])
-  .controller('searchController',['$scope','$routeParams', function($scope, $routeParams){
+  .controller('searchController',[
+    '$scope',
+    '$routeParams',
+    'productService',
+    function($scope, $routeParams, productService){
     $scope.doSearch = function(name){
-
-    }
+      productService.getAllByName(name)
+        .success(function(result){
+          $scope.records = result;
+      });
+    };
 
     switch ($routeParams.filter){
       case 'product':
         $scope.type = 'Products';
       break;
     }
+
+    $scope.filter = $routeParams.filter;
+
+    $scope.doSearch($scope.filter);
+
+  }])
+  .controller('loginController',['$scope',function($scope){
+
   }])
   .controller('impactController',['$scope', function($scope){
 

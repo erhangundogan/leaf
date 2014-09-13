@@ -3,7 +3,8 @@
 // Declare app level module which depends on filters, and services
 angular.module('leaf', [
   'ngRoute',
-  'leaf.controllers'
+  'leaf.controllers',
+  'leaf.directives'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -19,10 +20,10 @@ config(['$routeProvider', function($routeProvider) {
       templateUrl: 'templates/impact.html',
       controller: 'impactController'
     })
-    .when('/view1',
+    .when('/login',
       {
-        templateUrl: 'templates/partial1.html',
-        controller: 'MyCtrl1'
+        templateUrl: 'templates/login.html',
+        controller: 'loginController'
       });
   $routeProvider.otherwise({redirectTo: '/'});
 }]);

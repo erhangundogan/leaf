@@ -9,6 +9,12 @@ angular.module('leaf.directives', [])
       elm.text(version);
     };
   }])
+  .directive('header',function(){
+    return {
+      templateUrl: 'templates/header.html'
+    }
+
+  })
   .directive('product', [function() {
     return {
       scope: {
