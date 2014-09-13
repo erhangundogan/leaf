@@ -12,7 +12,7 @@ You may use any [product](schema/) property for data query as below.
 
 Request:
 
-    http://leafteam.github.io/api/product?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
+    http://leaf.gelistirme.org/api/product?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
     
 Response:
 

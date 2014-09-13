@@ -3,7 +3,7 @@ module.exports = {
     name: 'leaf'
   },
   db: {
-    connection: 'mongodb://guest:iamguestok@ds063889.mongolab.com:63889/leaf',
+    connection: 'mongodb://192.168.122.10/leaf',
     cookieSecret: 'leafteam rocks!'
   },
   web: {
