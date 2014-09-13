@@ -12,6 +12,14 @@ html, body, body > div{
   padding: 0;
 }
 
+/*Search Page
+*/
+
+.list-container{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .full-height{
   height: 100%;
 }

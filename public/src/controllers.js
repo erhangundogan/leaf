@@ -2,12 +2,20 @@
 
 /* Controllers */
 
-angular.module('leaf.controllers', [])
-  .controller('landingController',['$scope', function($scope){
+angular.module('leaf.controllers', ['ngRoute'])
+  .controller('landingController',['$scope', '$location', function($scope, $location){
     $scope.filterObject = "";
+
+    $scope.doSearch = function(name){
+      $location.path('search/product/' + name);
+    }
   }])
-  .controller('searchController',['$scope','$routeProvider', function($scope, $routeProvider){
-    switch ($scope.filter){
+  .controller('searchController',['$scope','$routeParams', function($scope, $routeParams){
+    $scope.doSearch = function(name){
+
+    }
+
+    switch ($routeParams.filter){
       case 'product':
         $scope.type = 'Products';
       break;
