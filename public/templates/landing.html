@@ -1,46 +1,49 @@
 <div class="jumbotron landing-container full-height">
-  <div class="container">
+  <div class="container full-height">
 
     <div class="row">
-      <div header=""></div>
+      <div class="col-lg-2 col-xs-4 col-xs-offset-4">
+        <img src="img/logo_localleaf.png" class="img-responsive"/>
+      </div>
     </div>
 
+    <div class="row">
+      <form class="col-lg-offset-3 col-lg-6 col-sm-12" ng-submit="doSearch(filterObject);">
+        <input type="text" ng-model="filterObject" class="form-control" placeholder="Search Products"/>
+      </form>
+    </div>
 
-    <form class="col-lg-6 col-sm-12" ng-submit="doSearch(filterObject);">
-      <input type="text" ng-model="filterObject" class="form-control" placeholder="Search Products"/>
-    </form>
-
-    <div class="col-lg-6 col-sm-12">
-      <p class="flex-center">
-        Care to contribute?
-      </p>
-      <div class="row">
-        <div class="col-lg-6 flex-center">
-          <a href="/#/login">Login</a>
-        </div>
-        <div class="col-lg-6 flex-center">
-          <a href="/#/signup">Sign Up</a>
+    <div class="row">
+      <div class="col-lg-offset-3 col-lg-6 col-sm-12">
+        <p>
+          Care to contribute?
+        </p>
+        <div class="row">
+          <div class="col-lg-6 flex-center">
+            <a href="/#/login">Login</a>
+          </div>
+          <div class="col-lg-6 flex-center">
+            <a href="/#/signup">Sign Up</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-6 col-sm-12">
-      <div class="row">
-        <div class="col-lg-4">
-          <ul>
-            <li>
-              <a href="#">About Local Leaf</a>
-              <a href="#">Contact</a>
-              <a href="#">Api</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
+    <div class="row">
+      <div class="col-lg-4">
+        <ul class="nav nav-justified">
+          <li>
+            <a href="#">About Local Leaf</a>
+            <a href="#">Contact</a>
+            <a href="#">Api</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
 
-        </div>
-        <div class="col-lg-4">
-          <p>@ 2014 Team Leaf</p>
-        </div>
+      </div>
+      <div class="col-lg-4" style="padding-top: 42px">
+        <p>@ 2014 Team Leaf</p>
       </div>
     </div>
 
