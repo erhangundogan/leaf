@@ -10,6 +10,15 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
     debugger;
-  $routeProvider.when('/view1', {templateUrl: 'templates/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider
+    .when('/',{
+      templateUrl: 'templates/landing.html',
+      controller: 'landingController'
+    })
+    .when('/view1',
+      {
+        templateUrl: 'templates/partial1.html',
+        controller: 'MyCtrl1'
+      });
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);
