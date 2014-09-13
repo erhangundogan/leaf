@@ -1,15 +1,19 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
-  'ngRoute'
+angular.module('leaf', [
+  'ngRoute',
+  'leaf.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-    debugger;
   $routeProvider
     .when('/',{
       templateUrl: 'templates/landing.html',
       controller: 'landingController'
+    })
+    .when('/search/:model/:filter',{
+      templateUrl: 'templates/search.html',
+      controller: 'searchController'
     })
     .when('/impact',{
       templateUrl: 'templates/impact.html',
