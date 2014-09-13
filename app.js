@@ -25,7 +25,8 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.cookieParser());
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: settings.db.cookieSecret,
   store: new MongoStore({
@@ -33,7 +34,6 @@ app.use(session({
     url : settings.db.connection + '/sessions'
   })
 }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/product', routes.product.get);
 app.use('*', routes.home);
