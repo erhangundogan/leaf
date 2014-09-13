@@ -30,6 +30,7 @@ app.use(express.cookieParser());
 app.use(express.session({secret: 'leaf rocks'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/product', routest.product.get);
 app.use('*', routes.home);
 
 // catch 404 and forward to error handler
