@@ -17,20 +17,17 @@ Request:
     
 Response:
 
-    // found
     { 
       data: { 
         name: …,
         brand: …,
         …
       }
-    }
+    } // found
     
-    // not found
-    { data: null }
+    { data: null } // not found    
     
-    // error state
-    { error: … } 
+    { error: … } // error state  
     
 Get Products
 ------------
@@ -42,8 +39,7 @@ Request:
     http://leaf.gelistirme.org/api/products?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
     
 Response:
-
-    // found
+    
     { 
       data: [{ 
         name: …,
@@ -55,13 +51,9 @@ Response:
         …
       }],
       count: … 
-    }
+    } // found
     
-    // not found
-    { data: null }
-    
-    // error state
-    { error: … }   
+
 
 
 ### Authors

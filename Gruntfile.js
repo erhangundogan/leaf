@@ -21,8 +21,7 @@ module.exports = function(grunt) {
       libraries: {
         dest: 'dist/lib.js',
         exclude: [
-          'fontawesome',
-          'flexboxgrid'
+          'fontawesome'
         ],
         mainFiles: {
           'html5-boilerplate': 'js/main.js'
@@ -63,9 +62,6 @@ module.exports = function(grunt) {
       resource: {
         src: [
           'public/components/fontawesome/css/font-awesome.min.css',
-          'public/components/flexboxgrid/css/flexboxgrid.min.css',
-          'public/components/flexboxgrid/css/index.min.css',
-          'public/components/flexboxgrid/css/style.min.css',
           'public/fonts/**/*',
           'public/img/**/*'],
         dest: 'dist/'
@@ -124,7 +120,6 @@ module.exports = function(grunt) {
             'public/components/html5-boilerplate/css/main.css',
             'public/components/html5-boilerplate/css/normalize.css',
             'public/components/fontawesome/css/font-awesome.css',
-            'public/components/flexboxgrid/css/flexboxgrid.css',
             'public/css/app.css'
           ]
         }

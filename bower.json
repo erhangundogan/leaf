@@ -10,7 +10,6 @@
     "jquery": "*",
     "html5-boilerplate": "*",
     "es5-shim": "*",
-    "flexboxgrid": "*",
     "fontawesome": "*"
   }
 }
