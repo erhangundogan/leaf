@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "angular": "*",
+    "angular-bootstrap":"*",
     "angular-route": "*",
     "angular-mocks": "*",
     "jquery": "*",

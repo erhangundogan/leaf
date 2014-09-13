@@ -11,6 +11,10 @@ config(['$routeProvider', function($routeProvider) {
       templateUrl: 'templates/landing.html',
       controller: 'landingController'
     })
+    .when('/impact',{
+      templateUrl: 'templates/impact.html',
+      controller: 'impactController'
+    })
     .when('/view1',
       {
         templateUrl: 'templates/partial1.html',

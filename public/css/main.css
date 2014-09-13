@@ -1,126 +1,43 @@
-body {
-  color: #333;
-  background-color: #FFF;
-//min-height: 2000px;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
-a {
-  color: #00B7FF;
-}
-
-.push-right {
-  text-align: right
-}
-
-.hide {
-  display: none
-}
-
-.show {
-  display: block
-}
-
-.ml05 {
-  margin-left: .5em
-}
-
-.mb05 { margin-bottom: .5em }
-.mb02 { margin-bottom: .2em }
-.mb10 { margin-bottom: 1em }
-.mr05 { margin-right: .5em }
-.mr02 { margin-right: .2em }
-.ml05 { margin-left: .5em }
-.mt05 { margin-top: .5em }
-.mt10 { margin-top: 1em }
-.mt20 { margin-top: 2em }
-.mtb10 { margin-top: 1em; margin-bottom: 1em; }
-
-.navbar-static-top {
-  margin-bottom: 19px;
-}
-
-/* login */
-
-.body-signin, .body-signup {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
-}
-
-.form-signin, .form-signup {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-signin .form-signin-heading,
-.form-signup .form-signup-heading,
-.form-signin .checkbox,
-.form-signup .checkbox {
-  margin-bottom: 10px;
-}
-.form-signin .checkbox,
-.form-signup .checkbox {
-  font-weight: normal;
-}
-.form-signin .form-control,
-.form-signup .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  margin-bottom: .5em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.form-signin .form-control:focus,
-.form-signup .form-control:focus {
-  z-index: 2;
-}
-
-.navbar-brand {
-  color: #DDF !important;
-  font-size: 24pt;
-  letter-spacing: 2px;
-  text-shadow: 0 1px 0 rgba(0,0,255,.35), 1px 0 0 rgba(0,0,255,.35);
-}
-
-.user-image-container {
-  width: 128px;
-  height: 128px;
-}
-
-.user-sm-image-container {
-  width: 80px;
-  height: 80px;
-}
-
-.user-image, .user-sm-image {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
-.mwit-list {
-  box-sizing: border-box;
-  border: solid 1px #CCC;
-  margin: 1em;
-  padding: 0 1em 1em;
+body {
+  line-height: 1;
 }
-
-.mwit-item {
-  border-bottom: solid 1px #CCC;
+ol, ul {
+  list-style: none;
 }
-
-.mwit-time, .mwit-location {
-  color: #999;
+blockquote, q {
+  quotes: none;
 }
-
-.mwit-item {
-  margin-top: 1em;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
-
-#new-message {
-  font-size: 14pt;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
