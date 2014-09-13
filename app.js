@@ -35,7 +35,7 @@ app.use(session({
   })
 }));
 
-app.get('/product', routes.product.get);
+app.get('/api/product', routes.product.get);
 app.use('*', routes.home);
 
 var server = app.listen(app.get('port'), function() {
