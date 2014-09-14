@@ -1,4 +1,5 @@
 html, body, body > div{
+  min-height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -20,8 +21,6 @@ body{
 */
 
 .landing-container{
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
@@ -34,13 +33,19 @@ body{
 }
 /*Search Page
 */
-.search-container > row{
+.search-container > .row{
   text-align: center;
 }
 
 .list-container{
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+@media(max-width:992px){
+  .search-container > .row div{
+    margin-bottom: 20px;
+  }
 }
 
 /*Login Page
@@ -67,4 +72,8 @@ body{
 
 .img-responsive{
   max-height: 100%;
+}
+
+.center-text {
+  text-align: center;
 }

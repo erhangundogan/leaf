@@ -1,29 +1,37 @@
 <div class="search-container container-fluid">
 
   <div class="row">
+
     <div class="col-lg-4">
       <div class="row">
         <div class="col-lg-2 col-xs-4 col-xs-offset-4 col-lg-offset-5">
-          <img class="img-responsive" src="img/logo_localleaf.png">
+          <a href="/#/">
+            <img class="img-responsive" src="img/logo_localleaf.png">
+          </a>
         </div>
       </div>
     </div>
+
     <div class="col-lg-4">
       <div class="row">
-        <div class="col-sm-12 flex-center">
+        <div class="col-sm-12 center-text">
           <span>Cate to contribute?</span>
         </div>
-        <div class="col-sm-6 flex-center">
+        <div class="col-sm-6 center-text">
           <a href="/#/login">Login</a>
         </div>
-        <div class="col-sm-6 flex-center">
+        <div class="col-sm-6 center-text">
           <a href="/#/signup">Signup</a>
         </div>
       </div>
     </div>
+
     <div class="col-lg-4">
-      <input type="text" class="form-control" ng-model="filterObject" placeholder="Search {{type}}"/>
+      <form ng-submit="doSearch(filterObject);">
+        <input type="text" class="form-control" ng-model="filterObject" placeholder="Search {{type}}"/>
+      </form>
     </div>
+
   </div>
 
   <div class="col-xs-12 list-container">
