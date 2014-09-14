@@ -24,6 +24,10 @@ body{
   text-align: center;
 }
 
+.landing-container .row:first-child {
+  padding-top: 20px;
+}
+
 .landing-container .row:not(:first-child) {
   padding-top: 70px;
 }
