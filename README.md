@@ -4,6 +4,17 @@
 
 Provides web server and api for the web and mobile leaf application.
 
+## Project Website
+
+[http://leaf.gelistirme.org](http://leaf.gelistirme.org)
+
+## Project Git Repositories
+
+[https://github.com/leafteam/leaf](https://github.com/leafteam/leaf)
+
+[https://git.geekli.st/leaf/webserver](https://git.geekli.st/leaf/webserver)
+
+
 ## API
 
 Get Product
@@ -11,7 +22,7 @@ Get Product
 
 You may use any [product](schema/) property for data query as below. It will return one product if the criterias matched.
 
-Request:
+Request (GET):
 
     http://leaf.gelistirme.org/api/product?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
     
@@ -34,7 +45,7 @@ Get Products
 
 You may use any [product](schema/) property for data query as below. It will return product list if the criterias matched.
 
-Request:
+Request (GET):
 
     http://leaf.gelistirme.org/api/products?name=…&brand=…&consumed.longitude=…&consumed.latitude=…
     
@@ -53,7 +64,15 @@ Response:
       count: … 
     } // found
     
+Post Product
+------------
 
+Request (POST):
+
+    http://leaf.gelistirme.org/api/product?code=…
+
+
+More information will be provided...
 
 
 ### Authors
