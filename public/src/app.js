@@ -28,11 +28,6 @@ config(['$routeProvider', function($routeProvider) {
     .when('/impact',{
       templateUrl: 'templates/impact.html',
       controller: 'impactController'
-    })
-    .when('/login',
-      {
-        templateUrl: 'templates/login.html',
-        controller: 'loginController'
-      });
+    });
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
