@@ -53,10 +53,10 @@ var recordConsumption = function(data, callback) {
  * @param product
  * @param callback
  */
-var calculateRating = function(product, callback) {
-  if (product.distance < 300) {
+var calculateRating = function(consumption, callback) {
+  if (consumption.distance < 300) {
     callback(0.33); // closest one least consumption
-  } else if (product.distance >= 300 && product.distance < 750) {
+  } else if (consumption.distance >= 300 && consumption.distance < 750) {
     callback(0.66);
   } else {
     callback(1); // distant one most consumption
@@ -100,7 +100,6 @@ exports.product = {
     var latitude = req.query && req.query.lat ? req.query.lat : null;
 
     product.findOne({ code:code }).exec(function(err, result) {
-      debugger;
       if (err) {
         console.error('[ERROR] product.findOne, %s', err);
         res.json({ error: err });
@@ -114,7 +113,7 @@ exports.product = {
             product: product,
             longitude: longitude,
             latitude: latitude
-          }, function(err) {
+          }, function(err, consumptionItem) {
             if (err) {
               // we could not save consumption error returning
               console.error('[ERROR] recordConsumption, %s', err);
@@ -122,24 +121,28 @@ exports.product = {
               res.json({ data: product, error:err });
             } else {
 
-              // we captured consumption now return rating to client
-              calculateRating(product, function(err, result) {
-                if (err) {
-                  // we could not calculate rating returning error
-                  console.error('[ERROR] calculateRating, %s', err);
-                  product.impact = 0;
-                  res.json({ data: product, error:err });
-                } else {
-                  // we are done, return product with impact
-                  // bigger value means far from production
-                  // and worse for environment
-                  product.impact = result;
-                  res.json({
-                    data: product
-                  });
-                }
-              });
-
+              if (consumptionItem && consumptionItem._doc) {
+                // we captured consumption now return rating to client
+                calculateRating(consumptionItem._doc, function(err, result) {
+                  if (err) {
+                    // we could not calculate rating returning error
+                    console.error('[ERROR] calculateRating, %s', err);
+                    product.impact = 0;
+                    res.json({ data: product, error:err });
+                  } else {
+                    // we are done, return product with impact
+                    // bigger value means far from production
+                    // and worse for environment
+                    product.impact = result;
+                    res.json({
+                      data: product
+                    });
+                  }
+                });
+              } else {
+                product.impact = 0;
+                res.json({ data: product });
+              }
             }
           });
         } else {
