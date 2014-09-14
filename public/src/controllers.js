@@ -16,8 +16,9 @@ angular.module('leaf.controllers', ['ngRoute'])
     'productService',
     function($scope, $routeParams, productService){
     $scope.doSearch = function(name){
-      productService.getAllByName(name)
+      productService.search(name)
         .success(function(result){
+          debugger;
           $scope.records = result.data ? result.data : [];
       });
     };
@@ -65,7 +66,7 @@ angular.module('leaf.controllers', ['ngRoute'])
           record._id = result.data;
           $scope.hasResult = 'true';
         }else {
-          alert('dummy');
+          alert('result.data undefined');
         }
       });
     };

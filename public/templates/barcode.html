@@ -1,21 +1,51 @@
-<div class="scan-container row">
-  <div ng-switch on="hasResult" class="container-fluid">
+<div class="barcode-container container-fluid">
 
-    <div class="row" ng-switch-default>
-      <form ng-submit="getProduct(barcode);" class="col-lg-6 col-lg-offset-3 form-group">
-        <input type="text" class="form-control" ng-model="barcode">
-      </form>
-      <div class="col-lg-6 col-lg-offset-3">
-        <button type="button" ng-click="doScan()" class="btn btn-block btn-success">Scan!</button>
+  <div class="row">
+
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-lg-2 col-xs-4 col-xs-offset-4 col-lg-offset-5">
+          <a href="/#/">
+            <img class="img-responsive" src="img/logo_localleaf.png">
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="row" ng-switch-when="true">
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-sm-12 center-text">
+          <span>Cate to contribute?</span>
+        </div>
+        <div class="col-sm-6 center-text">
+          <a href="/#/login">Login</a>
+        </div>
+        <div class="col-sm-6 center-text">
+          <a href="/#/signup">Signup</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <form ng-submit="getProduct(barcode);">
+        <input type="text" class="form-control" ng-model="barcode" placeholder="Search Barcode">
+      </form>
+    </div>
+
+  </div>
+
+  <div ng-switch on="hasResult" class="row">
+
+    <div class="col-xs-12" ng-switch-when="true">
       <div product-extended="product"></div>
     </div>
 
-    <div class="row" ng-switch-when="false">
+    <div ng-switch-when="false">
       <form ng-submit="submitProduct(record)" class="col-lg-8 col-lg-offset-2 col-sm-12">
+
+        <div class="alert alert-warning">
+          <p>Product you are looking for could not be found. Please help by submitting. Thank you!</p>
+        </div>
 
         <div class="form-group">
             <input type="text" ng-bind="record.name" class="form-control" placeholder="Name"/>

@@ -50,7 +50,13 @@ body{
   .search-container > .row div{
     margin-bottom: 20px;
   }
+  .barcode-container > .row div{
+    margin-bottom: 20px;
+  }
 }
+
+/*Barcode Page
+*/
 
 /*Login Page
 */
