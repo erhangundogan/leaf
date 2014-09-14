@@ -67,8 +67,8 @@ app.use(session({
 // routes begin here
 app.get  ('/api/product/:code', routes.product.getByCode);
 app.get  ('/api/product', routes.product.getOneByFilter);
+app.get  ('/api/products/search', routes.product.search);
 app.get  ('/api/products', routes.product.getManyByFilter);
-app.get  ('/api/search', routes.product.search);
 app.post ('/api/product', routes.product.save);
 app.use  ('*', routes.home);
 // routes end here
