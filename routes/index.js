@@ -54,12 +54,11 @@ var recordConsumption = function(data, callback) {
  * @param callback
  */
 var calculateRating = function(consumption, callback) {
-  if (consumption.distance < 300) {
-    callback(null, 0.33); // closest one least consumption
-  } else if (consumption.distance >= 300 && consumption.distance < 750) {
-    callback(null, 0.66);
+  if (consumption.distance >= 2000) {
+    callback(null, 1); // distant
   } else {
-    callback(null, 1); // distant one most consumption
+    var result = consumption.distance / 2000;
+    callback(null, result);
   }
 };
 
