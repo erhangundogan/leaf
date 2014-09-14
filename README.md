@@ -1,8 +1,24 @@
-# LEAF
+# LOCAL LEAF
 
 #### Hack4good 0.6 Istanbul, hack against catastrophic climate change
 
 Provides web server and api for the web and mobile leaf application.
+
+## Presentation
+
+[http://www.slideshare.net/localleaf/hack4good-local-leaf-pitch](http://www.slideshare.net/localleaf/hack4good-local-leaf-pitch)
+
+## Website / Web Client
+
+[http://leaf.gelistirme.org](http://leaf.gelistirme.org)
+
+## Git Repositories
+
+[https://github.com/leafteam/leaf](https://github.com/leafteam/leaf)
+
+[https://git.geekli.st/leaf/webserver](https://git.geekli.st/leaf/webserver)
+
+## Tech Stack
 
 Frameworks, libraries, products used in a project briefly.
 
@@ -12,18 +28,8 @@ Frameworks, libraries, products used in a project briefly.
 * Android (Mobile Client)
 * MongoDB (Database)
 
-## Project Website
 
-[http://leaf.gelistirme.org](http://leaf.gelistirme.org)
-
-## Project Git Repositories
-
-[https://github.com/leafteam/leaf](https://github.com/leafteam/leaf)
-
-[https://git.geekli.st/leaf/webserver](https://git.geekli.st/leaf/webserver)
-
-
-## API
+# API
 
 Get Product
 -----------
