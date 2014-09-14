@@ -3,8 +3,6 @@
 // Declare app level module which depends on filters, and services
 angular.module('leaf', [
   'ngRoute',
-  'webcam',
-  'barcodeScanner',
   'leaf.services',
   'leaf.controllers',
   'leaf.directives'

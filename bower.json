@@ -1,7 +1,7 @@
 {
   "name": "leaf",
   "description": "Hack4Good Istanbul Leaf Team",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "devDependencies": {
     "angular": "*",
     "angular-bootstrap":"*",
@@ -10,8 +10,6 @@
     "jquery": "*",
     "html5-boilerplate": "*",
     "es5-shim": "*",
-    "fontawesome": "*",
-    "angular-phonegap-barcodeScanner":"*",
-    "webcam-directive": "*"
+    "fontawesome": "*"
   }
 }
