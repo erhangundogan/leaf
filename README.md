@@ -1,8 +1,16 @@
-# leaf server
+# LEAF
 
 #### Hack4good 0.6 Istanbul, hack against catastrophic climate change
 
 Provides web server and api for the web and mobile leaf application.
+
+Frameworks, libraries, products used in a project briefly.
+
+* Nginx
+* NodeJS (Web Server, API Server)
+* AngularJS (Web Client)
+* Android (Mobile Client)
+* MongoDB (Database)
 
 ## Project Website
 
