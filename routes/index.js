@@ -55,11 +55,11 @@ var recordConsumption = function(data, callback) {
  */
 var calculateRating = function(consumption, callback) {
   if (consumption.distance < 300) {
-    callback(0.33); // closest one least consumption
+    callback(null, 0.33); // closest one least consumption
   } else if (consumption.distance >= 300 && consumption.distance < 750) {
-    callback(0.66);
+    callback(null, 0.66);
   } else {
-    callback(1); // distant one most consumption
+    callback(null, 1); // distant one most consumption
   }
 };
 
@@ -134,6 +134,7 @@ exports.product = {
                     // bigger value means far from production
                     // and worse for environment
                     product.impact = result;
+                    product.distance = consumptionItem._doc.distance;
                     res.json({
                       data: product
                     });
