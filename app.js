@@ -26,7 +26,7 @@ app.set('view engine', 'jade');
 app.use(function(req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-x-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -67,8 +67,8 @@ app.use(session({
 // routes begin here
 app.get  ('/api/product/:code', routes.product.getByCode);
 app.get  ('/api/product', routes.product.getOneByFilter);
-app.get  ('/api/products', routes.product.getManyByFilter);
 app.get  ('/api/products/search', routes.product.search);
+app.get  ('/api/products', routes.product.getManyByFilter);
 app.post ('/api/product', routes.product.save);
 app.use  ('*', routes.home);
 // routes end here

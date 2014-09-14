@@ -81,6 +81,7 @@ exports.product = {
         .lean(true)
         .exec(function(err, result) {
           if (err) {
+            console.error('[ERROR] product.search, %s', err);
             res.json({ error: err });
           } else if (result && result.length > 0) {
             res.json({
@@ -99,7 +100,9 @@ exports.product = {
     var latitude = req.query && req.query.lat ? req.query.lat : null;
 
     product.findOne({ code:code }).exec(function(err, result) {
+      debugger;
       if (err) {
+        console.error('[ERROR] product.findOne, %s', err);
         res.json({ error: err });
       } else if (result && result._doc) {
         // we have this product in our database
@@ -114,6 +117,7 @@ exports.product = {
           }, function(err) {
             if (err) {
               // we could not save consumption error returning
+              console.error('[ERROR] recordConsumption, %s', err);
               product.impact = 0;
               res.json({ data: product, error:err });
             } else {
@@ -122,6 +126,7 @@ exports.product = {
               calculateRating(product, function(err, result) {
                 if (err) {
                   // we could not calculate rating returning error
+                  console.error('[ERROR] calculateRating, %s', err);
                   product.impact = 0;
                   res.json({ data: product, error:err });
                 } else {
@@ -178,7 +183,6 @@ exports.product = {
       });
   },
   save: function(req, res) {
-    debugger;
     if (req.body && req.body.code) {
       product.create({
         name: req.body.name,
