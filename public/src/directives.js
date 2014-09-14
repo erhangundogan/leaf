@@ -21,7 +21,7 @@ angular.module('leaf.directives', [])
   .directive('productExtended', [function() {
     return {
       scope: {
-        record: '=product'
+        record: '=productExtended'
       },
       replace: true,
       templateUrl: 'templates/productExtended.html'

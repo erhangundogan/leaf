@@ -37,7 +37,7 @@
   <div ng-switch on="hasResult" class="row">
 
     <div class="col-xs-12" ng-switch-when="true">
-      <div product-extended="product"></div>
+      <div product-extended="record"></div>
     </div>
 
     <div ng-switch-when="false">
@@ -48,23 +48,19 @@
         </div>
 
         <div class="form-group">
-            <input type="text" ng-bind="record.name" class="form-control" placeholder="Name"/>
+            <input type="text" ng-model="record.name" class="form-control" placeholder="Name"/>
         </div>
 
         <div class="form-group">
-          <input type="text" ng-bind="record.brand" class="form-control" placeholder="Brand"/>
+          <input type="text" ng-model="record.company" class="form-control" placeholder="Company"/>
         </div>
 
         <div class="form-group">
-          <input type="text" ng-bind="record.company" class="form-control" placeholder="Company"/>
+          <input type="text" ng-model="record.code" class="form-control" placeholder="Code"/>
         </div>
 
         <div class="form-group">
-          <input type="text" ng-bind="record.code" class="form-control" placeholder="Code"/>
-        </div>
-
-        <div class="form-group">
-          <input type="text" ng-bind="record.description" class="form-control" placeholder="Description"/>
+          <input type="text" ng-model="record.description" class="form-control" placeholder="Description"/>
         </div>
 
         <div class="form-group"><!-Wow Huge! You mean wide, right? Shh, they will read us later, duh...-->

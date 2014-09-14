@@ -55,6 +55,18 @@ body{
   }
 }
 
+@media(min-width:1200px){
+  .search-container > .row{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .barcode-container > .row{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+
 /*Barcode Page
 */
 

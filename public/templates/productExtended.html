@@ -1,9 +1,42 @@
-<div class="row">
+<div class="container">
 
   <div class="well">
-    <h3><a href="{{record.code}}">{{record.name}}</a></h3>
-    <p>{{record.description}}</p>
-    <p>{{record.company}}</p>
+    <h3>{{record.name}}</h3>
+    <div class="row">
+      <div class="col-lg-3">
+        Company
+      </div>
+      <div class="col-lg-9">
+        <p>{{record.company}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        Type
+      </div>
+      <div class="col-lg-9">
+        <p>{{record.type}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        District
+      </div>
+      <div class="col-lg-9">
+        <p>{{record.district}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        Description
+      </div>
+      <div class="col-lg-12">
+        <p>{{record.description}}</p>
+      </div>
+    </div>
   </div>
 
   <!--

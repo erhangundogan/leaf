@@ -18,7 +18,6 @@ angular.module('leaf.controllers', ['ngRoute'])
     $scope.doSearch = function(name){
       productService.search(name)
         .success(function(result){
-          debugger;
           $scope.records = result.data ? result.data : [];
       });
     };
@@ -55,15 +54,18 @@ angular.module('leaf.controllers', ['ngRoute'])
           $scope.hasResult = 'true';
           $scope.record = result.data;
         }else{
+          $scope.record = null;
           $scope.hasResult = 'false';
         }
       });
     };
 
     $scope.submitProduct = function(record){
+      debugger;
       productService.post(record).success(function(result){
         if(result.data){
-          record._id = result.data;
+          debugger;
+          $scope.record = result.data;
           $scope.hasResult = 'true';
         }else {
           alert('result.data undefined');
