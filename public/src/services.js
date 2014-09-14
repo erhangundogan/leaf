@@ -17,8 +17,14 @@ angular.module('leaf.services', []).
       getAll: function(){
         return $http.get(root + '/product');
       },
+      getByBarcode: function(code){
+        return $http.get(root + '/product?code=' + code);
+      },
       getAllByName: function(name){
-        return $http.post(root + '/products?name=' + name);
+        return $http.get(root + '/products?name=' + name);
+      },
+      post: function(record){
+        return $http.post(root + '/product', record);
       }
     }
   }]);

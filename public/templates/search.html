@@ -1,8 +1,12 @@
-<div class="jumbotron">
+<div class="search-container container-fluid">
 
   <div class="row">
-    <div class="col-lg-4" style="height: 100px;">
-      <img class="img-responsive" src="img/logo_localleaf.png">
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-lg-2 col-xs-4 col-xs-offset-4 col-lg-offset-5">
+          <img class="img-responsive" src="img/logo_localleaf.png">
+        </div>
+      </div>
     </div>
     <div class="col-lg-4">
       <div class="row">
@@ -22,7 +26,7 @@
     </div>
   </div>
 
-  <div class="row list-container">
-    <div ng-repeat="record in records" product="record"></div>
+  <div class="col-xs-12 list-container">
+    <div ng-repeat="record in records track by $index" product="record"></div>
   </div>
 </div>

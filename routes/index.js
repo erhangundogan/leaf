@@ -153,6 +153,7 @@ exports.product = {
       });
   },
   save: function(req, res) {
+    debugger;
     if (req.body && req.body.code) {
       product.create({
         name: req.body.name,

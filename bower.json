@@ -10,6 +10,8 @@
     "jquery": "*",
     "html5-boilerplate": "*",
     "es5-shim": "*",
-    "fontawesome": "*"
+    "fontawesome": "*",
+    "angular-phonegap-barcodeScanner":"*",
+    "webcam-directive": "*"
   }
 }

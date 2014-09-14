@@ -1,0 +1,50 @@
+<div class="scan-container row">
+  <div ng-switch on="hasResult" class="container-fluid">
+
+    <div class="row" ng-switch-default>
+      <form ng-submit="getProduct(barcode);" class="col-lg-6 col-lg-offset-3 form-group">
+        <input type="text" class="form-control" ng-model="barcode">
+      </form>
+      <div class="col-lg-6 col-lg-offset-3">
+        <button type="button" ng-click="doScan()" class="btn btn-block btn-success">Scan!</button>
+      </div>
+    </div>
+
+    <div class="row" ng-switch-when="true">
+      <div product-extended="product"></div>
+    </div>
+
+    <div class="row" ng-switch-when="false">
+      <form ng-submit="submitProduct(record)" class="col-lg-8 col-lg-offset-2 col-sm-12">
+
+        <div class="form-group">
+            <input type="text" ng-bind="record.name" class="form-control" placeholder="Name"/>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-bind="record.brand" class="form-control" placeholder="Brand"/>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-bind="record.company" class="form-control" placeholder="Company"/>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-bind="record.code" class="form-control" placeholder="Code"/>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-bind="record.description" class="form-control" placeholder="Description"/>
+        </div>
+
+        <div class="form-group"><!-Wow Huge! You mean wide, right? Shh, they will read us later, duh...-->
+          <button type="submit" class="btn btn-block btn-success">
+            Submit
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

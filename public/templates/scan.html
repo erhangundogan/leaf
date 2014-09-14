@@ -1,0 +1,52 @@
+<div class="scan-container row">
+  <div ng-switch on="hasResult" class="row">
+
+    <div class="row" ng-switch-default>
+      <div class="col-lg-6 col-lg-offset-3">
+        <webcam>
+
+        </webcam>
+      </div>
+      <div class="col-lg-6 col-lg-offset-3">
+        <button type="button" ng-click="doScan()" class="btn btn-block btn-success">Scan!</button>
+      </div>
+    </div>
+
+    <div class="row" ng-switch-when="true">
+      <!--<div product-extended=""></div>-->
+    </div>
+
+    <div class="row" ng-switch-when="false">
+        <form ng-submit="submitProduct(product)" class="col-lg-8 col-lg-offset-2">
+
+          <div class="row">
+            <input type="text" ng-bind="product.name" placeholder="Name"/>
+          </div>
+
+          <div class="row">
+            <input type="text" ng-bind="product.brand" placeholder="Brand"/>
+          </div>
+
+          <div class="row">
+            <input type="text" ng-bind="product.company" placeholder="Company"/>
+          </div>
+
+          <div class="row">
+            <input type="text" ng-bind="product.code" placeholder="Code"/>
+          </div>
+
+          <div class="row">
+            <input type="text" ng-bind="product.description" placeholder="Description"/>
+          </div>
+
+          <div class="row"><!-Wow Huge! You mean wide, right? Shh, they will read us later, duh...-->
+            <button type="submit" class="btn btn-block btn-success">
+              Submit
+            </button>
+          </div>
+
+        </form>
+    </div>
+
+  </div>
+</div>

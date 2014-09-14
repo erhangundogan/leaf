@@ -1,7 +1,19 @@
 html, body, body > div{
   margin: 0;
   padding: 0;
-  height: 100%;
+}
+
+body{
+  min-height: 100%;
+
+  background: #cdeb8e; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #cdeb8e 0%, #a5c956 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#cdeb8e), color-stop(100%,#a5c956)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #cdeb8e 0%,#a5c956 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  #cdeb8e 0%,#a5c956 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  #cdeb8e 0%,#a5c956 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #cdeb8e 0%,#a5c956 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 /*Landing Page
@@ -22,6 +34,9 @@ html, body, body > div{
 }
 /*Search Page
 */
+.search-container > row{
+  text-align: center;
+}
 
 .list-container{
   overflow-x: hidden;
@@ -30,6 +45,13 @@ html, body, body > div{
 
 /*Login Page
 */
+
+/*Product
+*/
+
+.product .row{
+  margin-top: 20px;
+}
 
 .login-container .row:nth-child(2){
   height: 300px;

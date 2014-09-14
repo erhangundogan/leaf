@@ -18,7 +18,7 @@ angular.module('leaf.controllers', ['ngRoute'])
     $scope.doSearch = function(name){
       productService.getAllByName(name)
         .success(function(result){
-          $scope.records = result;
+          $scope.records = result.data ? result.data : [];
       });
     };
 
@@ -32,6 +32,43 @@ angular.module('leaf.controllers', ['ngRoute'])
 
     $scope.doSearch($scope.filter);
 
+  }])
+  .controller('productExtendedController',[
+    '$scope',
+    '$routeParams',
+    'productService',
+    function($scope, $routeParams, productService){
+      productService.getByBarcode($routeParams.barcode).success(function(result){
+        if(result.data){
+          $scope.record = result.data;
+        }else{
+
+        }
+      });
+  }])
+  .controller('barcodeController',['$scope','productService', function($scope, productService){
+
+    $scope.getProduct = function(code){
+      productService.getByBarcode(code).success(function(result){
+        if(result.data){
+          $scope.hasResult = 'true';
+          $scope.record = result.data;
+        }else{
+          $scope.hasResult = 'false';
+        }
+      });
+    };
+
+    $scope.submitProduct = function(record){
+      productService.post(record).success(function(result){
+        if(result.data){
+          record._id = result.data;
+          $scope.hasResult = 'true';
+        }else {
+          alert('dummy');
+        }
+      });
+    };
   }])
   .controller('loginController',['$scope',function($scope){
 
