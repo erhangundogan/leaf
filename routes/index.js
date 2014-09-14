@@ -68,6 +68,31 @@ var calculateRating = function(product, callback) {
  * @type {{getByCode: getByCode, getOneByFilter: getOneByFilter, getManyByFilter: getManyByFilter, save: save}}
  */
 exports.product = {
+  search: function(req, res) {
+    var name = req.query && req.query.name ? req.query.name : null;
+
+    if (name) {
+      var nameSearch = new RegExp(name, 'i');
+
+      product
+        .find()
+        .where('name')
+        .regex(nameSearch)
+        .lean(true)
+        .exec(function(err, result) {
+          if (err) {
+            res.json({ error: err });
+          } else if (result && result.length > 0) {
+            res.json({
+              data: result,
+              count: result.length
+            });
+          } else {
+            res.json({ data: null });
+          }
+        });
+    }
+  },
   getByCode: function(req, res) {
     var code = req.params.code;
     var longitude = req.query && req.query.lon ? req.query.lon : null;
