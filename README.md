@@ -3,9 +3,11 @@
 #### Hack4good 0.6 Istanbul, hack against catastrophic climate change
 
 Our hackathon project won Turkey qualifications. But we could not able to make it worldwide.
-Our project nominated as a "[http://blog.geekli.st/post/97978462607/announcing-12-challenge-theme-winners-hackers](Personal Impact and Compelling Visualisation Challenge Runner up)"
+Project still nominated as a "[Personal Impact and Compelling Visualisation Challenge Runner up](http://blog.geekli.st/post/97978462607/announcing-12-challenge-theme-winners-hackers)"
 
-Provides web server and api for the web and mobile leaf application.
+We had great 48 hours together with great people who is trying to accomplish something good for our world! I am very pleased to attend and being a part of this organization.
+
+This application provides web server and api for the web and mobile leaf applications.
 
 ## Presentation
 
