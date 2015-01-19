@@ -5,7 +5,7 @@
 Our hackathon project won Turkey qualifications. But we could not able to make it worldwide.
 Project nominated as a "[Personal Impact and Compelling Visualisation Challenge Runner up](http://blog.geekli.st/post/97978462607/announcing-12-challenge-theme-winners-hackers)"
 
-We had great 48 hours together with great people who is trying to accomplish something good for our world! I am very pleased to attend and being a part of this organization.
+We had great 48 hours code rush together with great people. They were all trying to accomplish something good for our world! I am very pleased to attend and being a part of this organization.
 
 This application provides web server and api for the web and mobile leaf applications.
 
